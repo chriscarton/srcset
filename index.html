@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Gulp Boilerplate</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Srcset</h1>
+	<p>
+		L'ajout de srcset aux images fait qu'une image même trop petite va prendre automatiquement toute la largeur disponible. 
+	</p>
+	<p>
+		Ce problème est documenté sur : 
+		<a href="https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset">
+			https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset
+		</a>
+	</p>
+	<p>	
+		Voir aussi :
+		https://www.liip.ch/en/blog/things-you-should-know-about-responsive-images
+	</p>
+
+	<p>
+		Un autre article : <br>
+		https://medium.com/@MRWwebDesign/responsive-images-the-sizes-attribute-and-unexpected-image-sizes-882a2eadb6db
+	</p>
+
+
+	<p>L'image suivante ne fait au maximum que 600px de large : </p>
+	<img 
+		src="img/rock.jpg" 
+		srcset="
+			img/320/rock.jpg 320w,
+			img/600/rock.jpg 600w
+		" 
+	>
+
+	<p>
+		Une solution un peu pourrie : enrober l'image dans un conteneur qui a un style avec une propriété <code>max-width:600px;</code>
+	</p>
+	<div style="max-width:600px;">
+		<img src="img/rock.jpg" srcset="
+			img/320/rock.jpg 320w,
+			img/600/rock.jpg 600w
+		" alt="">
+	</div>
+
+	<p>
+		Avec <code>sizes="(min-width: 600px) 600px, 100vw"</code>
+	</p>
+	<img 
+		src="img/rock.jpg" 
+		srcset="
+		img/320/rock.jpg 320w,
+		img/600/rock.jpg 600w
+		" 
+		sizes="
+			(min-width: 600px) 600px, 100vw"
+	>
+
+	<p>
+		En ajoutant l'image originale dans srcset avec simplement size à 100vw et en spécifiant <code>width</code> à 800 (largeur de l'originale). Si si mon petit. 
+	</p>
+	<img 
+		src="rock.jpg" 
+		srcset="img/rock.jpg 800w, img/600/rock.jpg 600w, img/320/rock.jpg 320w" 
+		sizes="100vw" 
+		width="800"
+		alt="" 
+	/>
+	
+	Le code est le suivant : 
+	<pre>
+		<code>
+&lt;img 
+	src=&quot;rock.jpg&quot; 
+	srcset=&quot;img/rock.jpg 800w, img/600/rock.jpg 600w, img/320/rock.jpg 320w&quot; 
+	sizes=&quot;100vw&quot; 
+	width=&quot;800&quot;
+	alt=&quot;&quot; 
+/&gt;
+		</code>
+	</pre>
+	
+</body>
+</html>
