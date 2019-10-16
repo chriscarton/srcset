@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Gulp Boilerplate</title>
+	<title>Src test</title>
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -13,20 +13,24 @@
 	</p>
 	<p>
 		Ce problème est documenté sur : 
-		<a href="https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset">
-			https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset
-		</a>
 	</p>
-	<p>	
-		Voir aussi :
-		https://www.liip.ch/en/blog/things-you-should-know-about-responsive-images
-	</p>
-
-	<p>
-		Un autre article : <br>
-		https://medium.com/@MRWwebDesign/responsive-images-the-sizes-attribute-and-unexpected-image-sizes-882a2eadb6db
-	</p>
-
+	<ul>
+		<li>
+			<a href="https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset">
+				https://stackoverflow.com/questions/44991155/prevent-upscaling-with-scrset
+			</a>
+		</li>
+		<li>
+			<a href="https://www.liip.ch/en/blog/things-you-should-know-about-responsive-images">
+				https://www.liip.ch/en/blog/things-you-should-know-about-responsive-images
+			</a>
+		</li>
+		<li>
+			<a href="https://medium.com/@MRWwebDesign/responsive-images-the-sizes-attribute-and-unexpected-image-sizes-882a2eadb6db">
+				https://medium.com/@MRWwebDesign/responsive-images-the-sizes-attribute-and-unexpected-image-sizes-882a2eadb6db
+			</a>
+		</li>
+	</ul>
 
 	<p>L'image suivante ne fait au maximum que 600px de large : </p>
 	<img 
@@ -40,6 +44,7 @@
 	<p>
 		Une solution un peu pourrie : enrober l'image dans un conteneur qui a un style avec une propriété <code>max-width:600px;</code>
 	</p>
+
 	<div style="max-width:600px;">
 		<img src="img/rock.jpg" srcset="
 			img/320/rock.jpg 320w,
@@ -83,6 +88,6 @@
 /&gt;
 		</code>
 	</pre>
-	
+
 </body>
 </html>
